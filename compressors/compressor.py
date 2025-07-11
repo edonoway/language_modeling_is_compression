@@ -22,6 +22,7 @@ from typing import Mapping, Protocol
 
 from language_modeling_is_compression.compressors import flac
 from language_modeling_is_compression.compressors import language_model
+from language_modeling_is_compression.compressors import hf_language_model
 from language_modeling_is_compression.compressors import png
 
 
@@ -40,6 +41,7 @@ COMPRESS_FN_DICT: Mapping[str, Compressor] = {
     'flac': flac.compress,
     'gzip': functools.partial(gzip.compress, compresslevel=9),
     'language_model': language_model.compress,
+    'hf_language_model': hf_language_model.compress,
     'lzma': lzma.compress,
     'png': png.compress,
 }
